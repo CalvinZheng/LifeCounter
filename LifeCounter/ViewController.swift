@@ -9,12 +9,27 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+	
+	var currentLifeTotal = 20
+	
+	
+	@IBOutlet weak var lifeLabel: UILabel!
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
+		
+		lifeLabel.text = "\(currentLifeTotal)"
 	}
 
-
+	@IBAction func minus(_ sender: Any) {
+		currentLifeTotal -= 1
+		lifeLabel.text = "\(currentLifeTotal)"
+	}
+	@IBAction func plus(_ sender: Any) {
+		currentLifeTotal += 1
+		lifeLabel.text = "\(currentLifeTotal)"
+	}
+	
 }
 
