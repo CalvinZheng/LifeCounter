@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="landscape">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,23 +13,41 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LifeCounter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCx-fH-mUa" userLabel="TopLife">
+                                <rect key="frame" x="48.5" y="23" width="223" height="238"/>
+                                <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="200"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wvq-gQ-yJA" userLabel="TopLButton">
+                                <rect key="frame" x="160" y="0.0" width="160" height="284"/>
+                                <connections>
+                                    <action selector="topMinus:" destination="BYZ-38-t0r" eventType="touchDown" id="L1i-3I-v96"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhX-4H-jee" userLabel="TopRButton">
+                                <rect key="frame" x="0.0" y="0.0" width="160" height="284"/>
+                                <connections>
+                                    <action selector="topPlus:" destination="BYZ-38-t0r" eventType="touchDown" id="tCv-ZO-xMU"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lY-fm-dEo">
-                                <rect key="frame" x="173" y="41" width="222.5" height="238"/>
+                                <rect key="frame" x="48.5" y="307" width="223" height="238"/>
                                 <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="200"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRl-tZ-Arn">
-                                <rect key="frame" x="0.0" y="0.0" width="284" height="320"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRl-tZ-Arn" userLabel="LButton">
+                                <rect key="frame" x="0.0" y="284" width="160" height="284"/>
                                 <connections>
                                     <action selector="minus:" destination="BYZ-38-t0r" eventType="touchDown" id="AHg-Jf-WCA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LLg-Of-4ed">
-                                <rect key="frame" x="284" y="0.0" width="284" height="320"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LLg-Of-4ed" userLabel="RButton">
+                                <rect key="frame" x="160" y="284" width="160" height="284"/>
                                 <connections>
                                     <action selector="plus:" destination="BYZ-38-t0r" eventType="touchDown" id="ShU-qH-Rzv"/>
                                 </connections>
@@ -39,28 +55,37 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="centerY" secondItem="Wvq-gQ-yJA" secondAttribute="bottom" id="2AR-RZ-eaM"/>
                             <constraint firstItem="TRl-tZ-Arn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3Nw-dg-jKu"/>
-                            <constraint firstItem="8lY-fm-dEo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GTG-6Q-EPs"/>
-                            <constraint firstItem="LLg-Of-4ed" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Mgm-je-6w2"/>
-                            <constraint firstItem="LLg-Of-4ed" firstAttribute="width" secondItem="TRl-tZ-Arn" secondAttribute="width" id="Wjq-av-SYU"/>
-                            <constraint firstItem="8lY-fm-dEo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Zr1-yS-v6R"/>
-                            <constraint firstItem="TRl-tZ-Arn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aA3-EG-2PQ"/>
+                            <constraint firstItem="8lY-fm-dEo" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="GTG-6Q-EPs"/>
+                            <constraint firstItem="Wvq-gQ-yJA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="IPS-vr-Mhy"/>
+                            <constraint firstItem="LLg-Of-4ed" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Mgm-je-6w2"/>
+                            <constraint firstItem="lhX-4H-jee" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="U2R-fo-lTg"/>
+                            <constraint firstItem="8lY-fm-dEo" firstAttribute="centerY" secondItem="TRl-tZ-Arn" secondAttribute="centerY" id="Zr1-yS-v6R"/>
+                            <constraint firstItem="TRl-tZ-Arn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="aA3-EG-2PQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TRl-tZ-Arn" secondAttribute="bottom" id="bPQ-i1-X88"/>
-                            <constraint firstItem="LLg-Of-4ed" firstAttribute="leading" secondItem="TRl-tZ-Arn" secondAttribute="trailing" id="cVB-6f-Hdu"/>
-                            <constraint firstItem="TRl-tZ-Arn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gcs-tP-fdN"/>
+                            <constraint firstItem="lhX-4H-jee" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bac-XW-YVy"/>
+                            <constraint firstItem="UCx-fH-mUa" firstAttribute="centerY" secondItem="Wvq-gQ-yJA" secondAttribute="centerY" id="cMC-zK-7s1"/>
+                            <constraint firstItem="Wvq-gQ-yJA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cMQ-06-Ewg"/>
+                            <constraint firstItem="LLg-Of-4ed" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cVB-6f-Hdu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="centerY" secondItem="lhX-4H-jee" secondAttribute="bottom" id="f9W-p7-P2U"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="centerX" secondItem="lhX-4H-jee" secondAttribute="trailing" id="fhW-jx-mTW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LLg-Of-4ed" secondAttribute="bottom" id="iRS-uP-YcC"/>
                             <constraint firstItem="LLg-Of-4ed" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="kPq-AB-3yN"/>
-                            <constraint firstItem="LLg-Of-4ed" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="swJ-2Z-nKx"/>
+                            <constraint firstItem="UCx-fH-mUa" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="nbD-oJ-FWa"/>
+                            <constraint firstItem="Wvq-gQ-yJA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uwA-Ce-pe2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="centerX" secondItem="TRl-tZ-Arn" secondAttribute="trailing" id="xkj-oS-Nvq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="lifeLabel" destination="8lY-fm-dEo" id="OH8-ou-nH0"/>
+                        <outlet property="topLifeLabel" destination="UCx-fH-mUa" id="vWF-kF-Wuy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138.38028169014083" y="136.875"/>
+            <point key="canvasLocation" x="136.875" y="136.26760563380282"/>
         </scene>
     </scenes>
 </document>
