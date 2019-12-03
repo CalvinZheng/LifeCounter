@@ -52,17 +52,42 @@
                                     <action selector="plus:" destination="BYZ-38-t0r" eventType="touchDown" id="ShU-qH-Rzv"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="30" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sjn-R0-6cf" userLabel="HistoryTable">
+                                <rect key="frame" x="290" y="284" width="30" height="284"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Tay-w6-mqQ"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="MK4-Rf-tq0"/>
+                                </connections>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="30" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="i5g-RT-yZ4" userLabel="TopHistoryTable">
+                                <rect key="frame" x="0.0" y="0.0" width="30" height="284"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="3f6-xi-31q"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="ONQ-MD-e1j"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="JlF-Pb-Drx"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="centerY" secondItem="Wvq-gQ-yJA" secondAttribute="bottom" id="2AR-RZ-eaM"/>
                             <constraint firstItem="TRl-tZ-Arn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3Nw-dg-jKu"/>
+                            <constraint firstItem="sjn-R0-6cf" firstAttribute="height" secondItem="TRl-tZ-Arn" secondAttribute="height" id="8eu-Cp-Bod"/>
+                            <constraint firstItem="i5g-RT-yZ4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="B2G-jY-C6A"/>
                             <constraint firstItem="8lY-fm-dEo" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="GTG-6Q-EPs"/>
                             <constraint firstItem="Wvq-gQ-yJA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="IPS-vr-Mhy"/>
                             <constraint firstItem="LLg-Of-4ed" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Mgm-je-6w2"/>
                             <constraint firstItem="lhX-4H-jee" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="U2R-fo-lTg"/>
+                            <constraint firstItem="Wvq-gQ-yJA" firstAttribute="height" secondItem="i5g-RT-yZ4" secondAttribute="height" id="UkU-Aw-amb"/>
                             <constraint firstItem="8lY-fm-dEo" firstAttribute="centerY" secondItem="TRl-tZ-Arn" secondAttribute="centerY" id="Zr1-yS-v6R"/>
                             <constraint firstItem="TRl-tZ-Arn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="aA3-EG-2PQ"/>
+                            <constraint firstItem="i5g-RT-yZ4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aL8-TK-w5H"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TRl-tZ-Arn" secondAttribute="bottom" id="bPQ-i1-X88"/>
                             <constraint firstItem="lhX-4H-jee" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bac-XW-YVy"/>
                             <constraint firstItem="UCx-fH-mUa" firstAttribute="centerY" secondItem="Wvq-gQ-yJA" secondAttribute="centerY" id="cMC-zK-7s1"/>
@@ -72,14 +97,18 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="centerX" secondItem="lhX-4H-jee" secondAttribute="trailing" id="fhW-jx-mTW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LLg-Of-4ed" secondAttribute="bottom" id="iRS-uP-YcC"/>
                             <constraint firstItem="LLg-Of-4ed" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="kPq-AB-3yN"/>
+                            <constraint firstItem="sjn-R0-6cf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ktq-gq-3qr"/>
                             <constraint firstItem="UCx-fH-mUa" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="nbD-oJ-FWa"/>
+                            <constraint firstItem="sjn-R0-6cf" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="rY3-5o-YTQ"/>
                             <constraint firstItem="Wvq-gQ-yJA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uwA-Ce-pe2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="centerX" secondItem="TRl-tZ-Arn" secondAttribute="trailing" id="xkj-oS-Nvq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="historyTable" destination="sjn-R0-6cf" id="fPZ-Jv-jSs"/>
                         <outlet property="lifeLabel" destination="8lY-fm-dEo" id="OH8-ou-nH0"/>
+                        <outlet property="topHistoryTable" destination="i5g-RT-yZ4" id="EKk-we-QZe"/>
                         <outlet property="topLifeLabel" destination="UCx-fH-mUa" id="vWF-kF-Wuy"/>
                     </connections>
                 </viewController>
