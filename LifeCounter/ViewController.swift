@@ -25,6 +25,24 @@ class ViewController: UIViewController {
         topLifeLabel.text = "\(currentTopLifeTotal)"
 		lifeLabel.text = "\(currentLifeTotal)"
 	}
+    
+    override func becomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            let alert = UIAlertController(title: "Reset both life counter to 20?", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
+                self.currentLifeTotal = 20
+                self.lifeLabel.text = "\(self.currentLifeTotal)"
+                self.currentTopLifeTotal = 20
+                self.topLifeLabel.text = "\(self.currentTopLifeTotal)"
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
 
     @IBAction func topMinus(_ sender: Any) {
         currentTopLifeTotal -= 1
