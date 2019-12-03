@@ -1,5 +1,5 @@
 # LifeCounter
 
-Very simple 1 person life counter. Tap left to minus, right to minus. Starting 20.
+2 player life counter for tabletop MTG. Tap left to minus, right to plus. Life history recorded on the right hand side. Shake to reset.
 
-Works on any iPhone, landscape or portrait.
+Works on any iOS device v12.2+, landscape and portrait.
