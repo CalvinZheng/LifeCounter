@@ -72,7 +72,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         currentLifeTotal -= 1
         lifeLabel.text = "\(currentLifeTotal)"
         
-        clickTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { _ in
+        clickTimer = Timer.scheduledTimer(withTimeInterval: 1.2, repeats: false, block: { _ in
             self.clickTimer = nil
             self.lifeHistory.append(self.currentLifeTotal)
             self.historyTable.reloadData()
@@ -88,7 +88,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         currentLifeTotal += 1
         lifeLabel.text = "\(currentLifeTotal)"
         
-        clickTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { _ in
+        clickTimer = Timer.scheduledTimer(withTimeInterval: 1.2, repeats: false, block: { _ in
             self.clickTimer = nil
             self.lifeHistory.append(self.currentLifeTotal)
             self.historyTable.reloadData()
@@ -104,7 +104,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         currentTopLifeTotal -= 1
         topLifeLabel.text = "\(currentTopLifeTotal)"
         
-        topClickTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { _ in
+        topClickTimer = Timer.scheduledTimer(withTimeInterval: 1.2, repeats: false, block: { _ in
             self.topClickTimer = nil
             self.topLifeHistory.append(self.currentTopLifeTotal)
             self.topHistoryTable.reloadData()
@@ -120,7 +120,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         currentTopLifeTotal += 1
         topLifeLabel.text = "\(currentTopLifeTotal)"
         
-        topClickTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { _ in
+        topClickTimer = Timer.scheduledTimer(withTimeInterval: 1.2, repeats: false, block: { _ in
             self.topClickTimer = nil
             self.topLifeHistory.append(self.currentTopLifeTotal)
             self.topHistoryTable.reloadData()
