@@ -9,6 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource {
+    
+    override var prefersStatusBarHidden: Bool {
+      return true
+    }
 	
 	var currentLifeTotal = 20
     var currentTopLifeTotal = 20
@@ -45,9 +49,9 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            let alert = UIAlertController(title: "Clear history and reset to 20?", message: "", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Clear history and reset?", message: "", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
-            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
+            alert.addAction(UIAlertAction(title: "Reset to 20", style: .default, handler: { _ in
                 self.currentLifeTotal = 20
                 self.lifeLabel.text = "\(self.currentLifeTotal)"
                 self.currentTopLifeTotal = 20
@@ -59,6 +63,19 @@ class ViewController: UIViewController, UITableViewDataSource {
                 self.topLifeHistory = []
                 self.topHistoryTable.reloadData()
                 self.topLifeHistory.append(20)
+            }))
+            alert.addAction(UIAlertAction(title: "Reset to 25", style: .default, handler: { _ in
+                self.currentLifeTotal = 25
+                self.lifeLabel.text = "\(self.currentLifeTotal)"
+                self.currentTopLifeTotal = 25
+                self.topLifeLabel.text = "\(self.currentTopLifeTotal)"
+                
+                self.lifeHistory = []
+                self.historyTable.reloadData()
+                self.lifeHistory.append(25)
+                self.topLifeHistory = []
+                self.topHistoryTable.reloadData()
+                self.topLifeHistory.append(25)
             }))
             self.present(alert, animated: true, completion: nil)
         }
