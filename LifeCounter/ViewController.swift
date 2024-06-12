@@ -64,19 +64,19 @@ class ViewController: UIViewController, UITableViewDataSource {
                 self.topHistoryTable.reloadData()
                 self.topLifeHistory.append(20)
             }))
-            alert.addAction(UIAlertAction(title: "Reset to 25", style: .default, handler: { _ in
-                self.currentLifeTotal = 25
-                self.lifeLabel.text = "\(self.currentLifeTotal)"
-                self.currentTopLifeTotal = 25
-                self.topLifeLabel.text = "\(self.currentTopLifeTotal)"
-                
-                self.lifeHistory = []
-                self.historyTable.reloadData()
-                self.lifeHistory.append(25)
-                self.topLifeHistory = []
-                self.topHistoryTable.reloadData()
-                self.topLifeHistory.append(25)
-            }))
+//            alert.addAction(UIAlertAction(title: "Reset to 25", style: .default, handler: { _ in
+//                self.currentLifeTotal = 25
+//                self.lifeLabel.text = "\(self.currentLifeTotal)"
+//                self.currentTopLifeTotal = 25
+//                self.topLifeLabel.text = "\(self.currentTopLifeTotal)"
+//                
+//                self.lifeHistory = []
+//                self.historyTable.reloadData()
+//                self.lifeHistory.append(25)
+//                self.topLifeHistory = []
+//                self.topHistoryTable.reloadData()
+//                self.topLifeHistory.append(25)
+//            }))
             self.present(alert, animated: true, completion: nil)
         }
     }
@@ -91,9 +91,12 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         clickTimer = Timer.scheduledTimer(withTimeInterval: 1.2, repeats: false, block: { _ in
             self.clickTimer = nil
-            self.lifeHistory.append(self.currentLifeTotal)
-            self.historyTable.reloadData()
-            self.historyTable.scrollToRow(at: .init(row: self.lifeHistory.count-1, section: 0), at: .none, animated: false)
+            if (self.lifeHistory.last != self.currentLifeTotal)
+            {
+                self.lifeHistory.append(self.currentLifeTotal)
+                self.historyTable.reloadData()
+                self.historyTable.scrollToRow(at: .init(row: self.lifeHistory.count-1, section: 0), at: .none, animated: false)
+            }
         })
     }
     
@@ -107,9 +110,12 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         clickTimer = Timer.scheduledTimer(withTimeInterval: 1.2, repeats: false, block: { _ in
             self.clickTimer = nil
-            self.lifeHistory.append(self.currentLifeTotal)
-            self.historyTable.reloadData()
-            self.historyTable.scrollToRow(at: .init(row: self.lifeHistory.count-1, section: 0), at: .none, animated: false)
+            if (self.lifeHistory.last != self.currentLifeTotal)
+            {
+                self.lifeHistory.append(self.currentLifeTotal)
+                self.historyTable.reloadData()
+                self.historyTable.scrollToRow(at: .init(row: self.lifeHistory.count-1, section: 0), at: .none, animated: false)
+            }
         })
     }
 
@@ -123,9 +129,12 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         topClickTimer = Timer.scheduledTimer(withTimeInterval: 1.2, repeats: false, block: { _ in
             self.topClickTimer = nil
-            self.topLifeHistory.append(self.currentTopLifeTotal)
-            self.topHistoryTable.reloadData()
-            self.topHistoryTable.scrollToRow(at: .init(row: self.topLifeHistory.count-1, section: 0), at: .none, animated: false)
+            if (self.topLifeHistory.last != self.currentTopLifeTotal)
+            {
+                self.topLifeHistory.append(self.currentTopLifeTotal)
+                self.topHistoryTable.reloadData()
+                self.topHistoryTable.scrollToRow(at: .init(row: self.topLifeHistory.count-1, section: 0), at: .none, animated: false)
+            }
         })
     }
     
@@ -139,9 +148,12 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         topClickTimer = Timer.scheduledTimer(withTimeInterval: 1.2, repeats: false, block: { _ in
             self.topClickTimer = nil
-            self.topLifeHistory.append(self.currentTopLifeTotal)
-            self.topHistoryTable.reloadData()
-            self.topHistoryTable.scrollToRow(at: .init(row: self.topLifeHistory.count-1, section: 0), at: .none, animated: false)
+            if (self.topLifeHistory.last != self.currentTopLifeTotal)
+            {
+                self.topLifeHistory.append(self.currentTopLifeTotal)
+                self.topHistoryTable.reloadData()
+                self.topHistoryTable.scrollToRow(at: .init(row: self.topLifeHistory.count-1, section: 0), at: .none, animated: false)
+            }
         })
     }
 	
