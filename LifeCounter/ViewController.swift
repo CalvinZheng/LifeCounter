@@ -49,36 +49,33 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            let alert = UIAlertController(title: "Clear history and reset?", message: "", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
-            alert.addAction(UIAlertAction(title: "Reset to 20", style: .default, handler: { _ in
-                self.currentLifeTotal = 20
-                self.lifeLabel.text = "\(self.currentLifeTotal)"
-                self.currentTopLifeTotal = 20
-                self.topLifeLabel.text = "\(self.currentTopLifeTotal)"
-                
-                self.lifeHistory = []
-                self.historyTable.reloadData()
-                self.lifeHistory.append(20)
-                self.topLifeHistory = []
-                self.topHistoryTable.reloadData()
-                self.topLifeHistory.append(20)
-            }))
-//            alert.addAction(UIAlertAction(title: "Reset to 25", style: .default, handler: { _ in
-//                self.currentLifeTotal = 25
-//                self.lifeLabel.text = "\(self.currentLifeTotal)"
-//                self.currentTopLifeTotal = 25
-//                self.topLifeLabel.text = "\(self.currentTopLifeTotal)"
-//                
-//                self.lifeHistory = []
-//                self.historyTable.reloadData()
-//                self.lifeHistory.append(25)
-//                self.topLifeHistory = []
-//                self.topHistoryTable.reloadData()
-//                self.topLifeHistory.append(25)
-//            }))
-            self.present(alert, animated: true, completion: nil)
+            askToReset()
         }
+    }
+    
+    func askToReset() {
+        if currentLifeTotal == 20 && currentTopLifeTotal == 20
+            && lifeHistory.count <= 1 && topLifeHistory.count <= 1 {
+            // No meaningful data, skip asking to reset
+            return
+        }
+        
+        let alert = UIAlertController(title: "Clear history and reset?", message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Reset to 20", style: .default, handler: { _ in
+            self.currentLifeTotal = 20
+            self.lifeLabel.text = "\(self.currentLifeTotal)"
+            self.currentTopLifeTotal = 20
+            self.topLifeLabel.text = "\(self.currentTopLifeTotal)"
+            
+            self.lifeHistory = []
+            self.historyTable.reloadData()
+            self.lifeHistory.append(20)
+            self.topLifeHistory = []
+            self.topHistoryTable.reloadData()
+            self.topLifeHistory.append(20)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func minus(_ sender: Any) {
@@ -91,8 +88,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         clickTimer = Timer.scheduledTimer(withTimeInterval: 1.2, repeats: false, block: { _ in
             self.clickTimer = nil
-            if (self.lifeHistory.last != self.currentLifeTotal)
-            {
+            if self.lifeHistory.last != self.currentLifeTotal {
                 self.lifeHistory.append(self.currentLifeTotal)
                 self.historyTable.reloadData()
                 self.historyTable.scrollToRow(at: .init(row: self.lifeHistory.count-1, section: 0), at: .none, animated: false)
@@ -110,8 +106,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         clickTimer = Timer.scheduledTimer(withTimeInterval: 1.2, repeats: false, block: { _ in
             self.clickTimer = nil
-            if (self.lifeHistory.last != self.currentLifeTotal)
-            {
+            if self.lifeHistory.last != self.currentLifeTotal {
                 self.lifeHistory.append(self.currentLifeTotal)
                 self.historyTable.reloadData()
                 self.historyTable.scrollToRow(at: .init(row: self.lifeHistory.count-1, section: 0), at: .none, animated: false)
@@ -129,8 +124,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         topClickTimer = Timer.scheduledTimer(withTimeInterval: 1.2, repeats: false, block: { _ in
             self.topClickTimer = nil
-            if (self.topLifeHistory.last != self.currentTopLifeTotal)
-            {
+            if self.topLifeHistory.last != self.currentTopLifeTotal {
                 self.topLifeHistory.append(self.currentTopLifeTotal)
                 self.topHistoryTable.reloadData()
                 self.topHistoryTable.scrollToRow(at: .init(row: self.topLifeHistory.count-1, section: 0), at: .none, animated: false)
@@ -148,8 +142,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         topClickTimer = Timer.scheduledTimer(withTimeInterval: 1.2, repeats: false, block: { _ in
             self.topClickTimer = nil
-            if (self.topLifeHistory.last != self.currentTopLifeTotal)
-            {
+            if self.topLifeHistory.last != self.currentTopLifeTotal {
                 self.topLifeHistory.append(self.currentTopLifeTotal)
                 self.topHistoryTable.reloadData()
                 self.topHistoryTable.scrollToRow(at: .init(row: self.topLifeHistory.count-1, section: 0), at: .none, animated: false)
